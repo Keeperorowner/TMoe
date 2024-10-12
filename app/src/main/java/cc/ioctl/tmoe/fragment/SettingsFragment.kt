@@ -19,6 +19,9 @@ class SettingsFragment : BaseHierarchyFragment() {
                 EnableDebugMode.INSTANCE, "EnableDebugMode", R.string.EnableDebugMode
             )
             functionSwitch(
+                FakePremium, "FakePremium", R.string.FakePremium
+            )
+            functionSwitch(
                 AntiAntiForward, "AntiAntiForward", R.string.AntiAntiForward,
                 "RestrictContentMitigationDesc", R.string.RestrictContentMitigationDesc
             )
