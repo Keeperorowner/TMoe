@@ -6,6 +6,7 @@
     <string name="TMoeSettings">TMoe Settings</string>
     <string name="Cancel">Cancel</string>
     <string name="EnableDebugMode">Enable debug mode</string>
+    <string name="FakePremium">Fake Premium</string>
     <string name="AntiAntiForward">Anti-Anti-Forward message</string>
     <string name="ProhibitChannelSwitching">Prohibit Channel Switching</string>
     <string name="ProhibitEnableReactions">Prohibit Enable Reactions</string>
