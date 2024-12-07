@@ -11,7 +11,10 @@ object FakePremium : CommonDynamicHook() {
             name=="isPremium"
         }.hookBefore {
             if (!isEnabled)return@hookBefore
-
+            it.result = true
+        findMethod(loadClass("org.telegram.messenger.UserConfig")){ 
+            name=="hasPremiumOnAccounts" }.hookBefore { 
+            if (!isEnabled) return@hookBefore 
             it.result = true
         }
     }
