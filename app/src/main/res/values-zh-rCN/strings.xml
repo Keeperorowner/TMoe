@@ -5,6 +5,8 @@
     <string name="TMoeSettings">TMoe 设置</string>
     <string name="EnableDebugMode">启用调试模式</string>
     <string name="FakePremium">解锁本地 Premium</string>
+    <string name="GhostMode">隐身模式</string>
+    <string name="GhostModeDesc">打开此选项后，别人将不会看到你的消息已读标记、聊天输入状态和动态访问记录。</string>
     <string name="AntiAntiForward">反反转发</string>
     <string name="ChatUiSettings">聊天页面设置</string>
     <string name="BasicFunction">基础功能</string>

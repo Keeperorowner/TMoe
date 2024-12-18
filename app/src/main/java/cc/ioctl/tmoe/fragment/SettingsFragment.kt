@@ -22,6 +22,10 @@ class SettingsFragment : BaseHierarchyFragment() {
                 FakePremium, "FakePremium", R.string.FakePremium
             )
             functionSwitch(
+                GhostMode,"GhostMode", R.string.GhostMode,
+                "GhostModeDesc", R.string.GhostModeDesc,
+            )
+            functionSwitch(
                 AntiAntiForward, "AntiAntiForward", R.string.AntiAntiForward,
                 "RestrictContentMitigationDesc", R.string.RestrictContentMitigationDesc
             )
