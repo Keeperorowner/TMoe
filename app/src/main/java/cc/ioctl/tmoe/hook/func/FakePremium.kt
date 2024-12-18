@@ -20,5 +20,12 @@ object FakePremium : CommonDynamicHook() {
             if (!isEnabled) return@hookBefore 
             it.result = true
         }
+
+        findMethod(loadClass("org.telegram.messenger.MessagesController")){
+            name=="premiumFeaturesBlocked"
+        }.hookBefore {
+            if (!isEnabled) return@hookBefore
+            it.result = false
+        }
     }
 }

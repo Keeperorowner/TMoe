@@ -24,7 +24,7 @@ public class HookEntry implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             "com.xtaolabs.pagergram",
             "org.telegram.messenger.web",
             "it.octogram.android",
-            "com.iMe.android",
+            "uz.unnarsx.cherrygram",
             "org.telegram.BifToGram",
             "ua.itaysonlab.messenger",
             "org.forkclient.messenger.beta",
@@ -38,7 +38,7 @@ public class HookEntry implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             "icu.ketal.yunigram.lspatch.beta",
             "org.forkgram.messenger",
             "com.blxueya.gugugram",
-        "com.radolyn.ayugram",
+            "com.radolyn.ayugram",
             "com.blxueya.gugugramx",
             "com.evildayz.code.telegraher",
             "com.exteragram.messenger"
