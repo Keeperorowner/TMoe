@@ -7,18 +7,16 @@ import com.github.kyuubiran.ezxhelper.utils.*
 @FunctionHookEntry
 object FakePremium : CommonDynamicHook() {
     override fun initOnce(): Boolean = tryOrFalse {
-        findMethod(loadClass("org.telegram.messenger.UserConfig")){
-            name=="isPremium"
-        }.hookBefore {
-            if (!isEnabled)return@hookBefore
-            it.result = true
-        }
-        
-        findMethod(loadClass("org.telegram.messenger.UserConfig")){ 
-            name=="hasPremiumOnAccounts" 
-        }.hookBefore { 
-            if (!isEnabled) return@hookBefore 
-            it.result = true
+        val pr= loadClass("org.telegram.messenger.UserConfig")
+        for (method in pr.declaredMethods) {
+            when (method.name) {
+                "isPremium",
+                "hasPremiumOnAccounts"->{
+                    method.hookBefore {
+                        if (isEnabled) it.result=true
+                    }
+                }
+            }
         }
 
         findMethod(loadClass("org.telegram.messenger.MessagesController")){
