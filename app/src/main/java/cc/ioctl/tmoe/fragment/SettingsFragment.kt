@@ -26,6 +26,9 @@ class SettingsFragment : BaseHierarchyFragment() {
                 "GhostModeDesc", R.string.GhostModeDesc,
             )
             functionSwitch(
+                FasterDownloadSpeed, "FasterDownloadSpeed", R.string.FasterDownloadSpeed
+            )
+            functionSwitch(
                 AntiAntiForward, "AntiAntiForward", R.string.AntiAntiForward,
                 "RestrictContentMitigationDesc", R.string.RestrictContentMitigationDesc
             )
@@ -33,7 +36,8 @@ class SettingsFragment : BaseHierarchyFragment() {
                 HideSponsoredMsg, "HideSponsoredMsg", R.string.HideSponsoredMsg
             )
             functionSwitch(FuckTrackingHook, "FuckTrackingHook", R.string.FuckTrackingHook, "FuckTrackingHookDesc", R.string.FuckTrackingHookDesc)
-            functionSwitch(
+
+            /*functionSwitch(
                 HideUserAvatar.INSTANCE, "HideUserAvatar", R.string.HideUserAvatar,
                 descProvider = {
                     if (HideUserAvatar.INSTANCE.isEnabledByUser) {
@@ -55,7 +59,7 @@ class SettingsFragment : BaseHierarchyFragment() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-            )
+            )*/
 
             functionSwitch(
                 AntiAntiCopy, "AntiAntiCopy", R.string.AntiAntiCopy,
