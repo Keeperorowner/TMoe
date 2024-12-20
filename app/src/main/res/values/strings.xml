@@ -39,7 +39,7 @@
     <string name="SourceCode">Source code</string>
     <string name="DiscussionGroup">Discussion group</string>
     <string name="LicenseNotices">License notices</string>
-    <string name="FasterDownloadSpeed">Download boost</string>
+    <string name="BoostSpeed">Download and Upload boost</string>
     <string name="NotEnabled">Not enabled</string>
     <string name="NotImplemented">Not implemented yet</string>
     <string name="VersionInfo">Version</string>

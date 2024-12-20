@@ -27,7 +27,7 @@
     <string name="Misc">其他</string>
     <string name="SourceCode">原始碼</string>
     <string name="LicenseNotices">開放原始碼許可</string>
-    <string name="FasterDownloadSpeed">更快的下载速度</string>
+    <string name="BoostSpeed">加速上传和下载速度</string>
     <string name="NotEnabled">未啟用</string>
     <string name="NotImplemented">咕咕咕</string>
     <string name="VersionInfo">版本</string>

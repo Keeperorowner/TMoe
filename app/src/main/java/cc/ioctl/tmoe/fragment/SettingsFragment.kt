@@ -1,6 +1,5 @@
 package cc.ioctl.tmoe.fragment
 
-import android.widget.Toast
 import cc.ioctl.tmoe.R
 import cc.ioctl.tmoe.hook.func.*
 import cc.ioctl.tmoe.ui.LocaleController
@@ -26,7 +25,7 @@ class SettingsFragment : BaseHierarchyFragment() {
                 "GhostModeDesc", R.string.GhostModeDesc,
             )
             functionSwitch(
-                FasterDownloadSpeed, "FasterDownloadSpeed", R.string.FasterDownloadSpeed
+                BoostSpeed, "BoostSpeed", R.string.BoostSpeed
             )
             functionSwitch(
                 AntiAntiForward, "AntiAntiForward", R.string.AntiAntiForward,
