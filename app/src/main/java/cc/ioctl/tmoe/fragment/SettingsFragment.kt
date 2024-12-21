@@ -22,7 +22,7 @@ class SettingsFragment : BaseHierarchyFragment() {
             )
             functionSwitch(
                 GhostMode,"GhostMode", R.string.GhostMode,
-                "GhostModeDesc", R.string.GhostModeDesc,
+                "GhostModeDesc", R.string.GhostModeDesc
             )
             functionSwitch(
                 BoostSpeed, "BoostSpeed", R.string.BoostSpeed
@@ -65,6 +65,10 @@ class SettingsFragment : BaseHierarchyFragment() {
                 descProvider = {
                     LocaleController.getString("AntiAntiCopyD", R.string.AntiAntiCopyD)
                 }
+            )
+            functionSwitch(
+                AlwaysShowDownloads, "AlwaysShowDownloads", R.string.AlwaysShowDownloads,
+                "AlwaysShowDownloadsD", R.string.AlwaysShowDownloadsD
             )
             functionSwitch(
                 ProhibitSpoilers, "ProhibitSpoilers", R.string.ProhibitSpoilers,

@@ -11,6 +11,8 @@
     <string name="HistoricalNewsOption">歷史訊息</string>
     <string name="AddSubItemChannel">開啟頻道</string>
     <string name="AddSubItemChannelD">新增開啟關聯頻道選項</string>
+    <string name="AlwaysShowDownloads">强制显示下载管理器按钮</string>
+    <string name="AlwaysShowDownloadsD">无论有无活跃的下载任务都在顶部显示下载图标</string>
     <string name="ChannelDetailNumbers">拒絕舍入</string>
     <string name="ChannelDetailNumbersD">頻道關注者顯示詳細人數 3k → 3000</string>
     <string name="AddInfoContainer">允許查詢</string>

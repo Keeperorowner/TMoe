@@ -17,6 +17,8 @@
     <string name="DiscussionGroup">交流群</string>
     <string name="LicenseNotices">开放源代码许可</string>
     <string name="BoostSpeed">加速上传和下载速度</string>
+    <string name="AlwaysShowDownloads">强制显示下载管理器按钮</string>
+    <string name="AlwaysShowDownloadsD">无论有无活跃的下载任务都在顶部显示下载图标</string>
     <string name="NotEnabled">未启用</string>
     <string name="NotImplemented">咕咕咕</string>
     <string name="VersionInfo">版本</string>
