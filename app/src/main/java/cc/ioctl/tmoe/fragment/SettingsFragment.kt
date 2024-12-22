@@ -25,7 +25,7 @@ class SettingsFragment : BaseHierarchyFragment() {
                 "GhostModeDesc", R.string.GhostModeDesc
             )
             functionSwitch(
-                BoostSpeed, "BoostSpeed", R.string.BoostSpeed
+                BoostSpeed,"BoostSpeed", R.string.BoostSpeed
             )
             functionSwitch(
                 AntiAntiForward, "AntiAntiForward", R.string.AntiAntiForward,
