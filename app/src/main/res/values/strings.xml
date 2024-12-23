@@ -35,7 +35,7 @@
     <string name="About">About</string>
     <string name="Misc">Miscellaneous</string>
     <string name="GhostMode">Ghost Mode</string>
-    <string name="GhostModeDesc">When this option is turned on, your message read marks, chat input status, and dynamic visit history will not be visible to others.</string>
+    <string name="GhostModeDesc">When this option is turned on, others will not see your message read mark, chat input status, dynamic access history, and online status.</string>
     <string name="AccessHash">Access Hash</string>
     <string name="GitHub" translatable="false">GitHub</string>
     <string name="SourceCode">Source code</string>
