@@ -47,15 +47,13 @@ object GhostMode : CommonDynamicHook() {
         }.hookBefore { param ->
             if (!isEnabled) return@hookBefore
 
-            try {
+            
                 val updateStatusClass = loadClass("org.telegram.tgnet.TLRPC\$TL_account_updateStatus")
                 val requestObject = param.args[0]
 
                 if (updateStatusClass.isInstance(requestObject)) {
                     XposedHelpers.setBooleanField(requestObject, "offline", true)
                 }
-            } catch (_: Exception) {
-            }
         }
     }
 }
