@@ -8,8 +8,7 @@ import de.robv.android.xposed.XposedHelpers
 @FunctionHookEntry
 object GhostMode : CommonDynamicHook() {
     override fun initOnce(): Boolean = tryOrFalse {
-        // 原有的已读消息hook
-        findMethod(loadClass("org.telegram.messenger.MessagesController")) {
+       findMethod(loadClass("org.telegram.messenger.MessagesController")) {
             name == "completeReadTask"
         }.hookBefore {
             if (!isEnabled) return@hookBefore
