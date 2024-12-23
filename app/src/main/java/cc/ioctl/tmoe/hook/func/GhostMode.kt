@@ -15,14 +15,12 @@ object GhostMode : CommonDynamicHook() {
             it.result = null
         }
 
-
         findMethod(loadClass("org.telegram.ui.ChatActivity\$ChatActivityEnterViewDelegate")) {
             name == "needSendTyping"
         }.hookBefore {
             if (!isEnabled) return@hookBefore
             it.result = null
         }
-
 
         findMethod(loadClass("org.telegram.ui.Stories.StoriesController")) {
             name == "markStoryAsRead"
@@ -45,13 +43,13 @@ object GhostMode : CommonDynamicHook() {
                     parameterTypes[8] == java.lang.Boolean.TYPE &&
                     parameterTypes[9] == Integer.TYPE
         }.hookBefore { param ->
-                if (!isEnabled) return@hookBefore
-                val updateStatusClass = loadClass("org.telegram.tgnet.TLRPC\$TL_account_updateStatus")
-                val requestObject = param.args[0]
+            if (!isEnabled) return@hookBefore
+            val updateStatusClass = loadClass("org.telegram.tgnet.TLRPC\$TL_account_updateStatus")
+            val requestObject = param.args[0]
 
-                if (updateStatusClass.isInstance(requestObject)) {
-                    XposedHelpers.setBooleanField(requestObject, "offline", true)
-                }
+            if (updateStatusClass.isInstance(requestObject)) {
+                XposedHelpers.setBooleanField(requestObject, "offline", true)
+            }
         }
     }
 }
