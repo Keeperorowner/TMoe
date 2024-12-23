@@ -45,9 +45,7 @@ object GhostMode : CommonDynamicHook() {
                     parameterTypes[8] == java.lang.Boolean.TYPE &&
                     parameterTypes[9] == Integer.TYPE
         }.hookBefore { param ->
-            if (!isEnabled) return@hookBefore
-
-            
+                if (!isEnabled) return@hookBefore
                 val updateStatusClass = loadClass("org.telegram.tgnet.TLRPC\$TL_account_updateStatus")
                 val requestObject = param.args[0]
 

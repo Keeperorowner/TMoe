@@ -11,7 +11,7 @@ object BoostSpeed : CommonDynamicHook() {
         findMethod(loadClass("org.telegram.messenger.FileLoadOperation")) {
             name == "updateParams"
         }.hookAfter { param ->
-            if (!isEnabled) return@hookAfter
+                if (!isEnabled) return@hookAfter
                 XposedHelpers.setIntField(param.thisObject, "downloadChunkSizeBig", 1048576)
                 XposedHelpers.setObjectField(param.thisObject, "maxDownloadRequests", 12)
                 XposedHelpers.setObjectField(param.thisObject, "maxDownloadRequestsBig", 12)
@@ -21,7 +21,7 @@ object BoostSpeed : CommonDynamicHook() {
         findMethod(loadClass("org.telegram.messenger.FileUploadOperation")) {
             name == "startUploadRequest"
         }.hookAfter { param ->
-            if (!isEnabled) return@hookAfter
+                if (!isEnabled) return@hookAfter
                 XposedHelpers.setIntField(param.thisObject, "uploadChunkSize", 1048576)
                 XposedHelpers.setObjectField(param.thisObject, "maxRequestsCount", 8)                            
                 }            
