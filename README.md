@@ -1,9 +1,8 @@
 # TMoe_mod
 
-##使用非官方版本请勿去官方群聊反馈问题
-
 [![license](https://img.shields.io/github/license/cinit/TMoe.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![GitHub release](https://img.shields.io/github/release/cinit/TMoe.svg)](https://github.com/Keeperorowner/TMoe/releases/latest)
+
+## 使用非官方版本请勿去官方群聊反馈问题
 
 TMoe 是一个兼容若干第三方开源 Telegram 客户端的开源 Xposed 模块
 
