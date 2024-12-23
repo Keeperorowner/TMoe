@@ -106,7 +106,7 @@ public class NativeLoader {
      * @param libraryName library name without "lib" or ".so", eg. "mmkv"
      */
     private static File extractNativeLibrary(Context ctx, String libraryName) {
-        final String abi = Build.CPU_ABI;
+        final String abi = Build.SUPPORTED_ABIS[0];
         final String currentVersion = BuildConfig.BUILD_UUID;
         final String soName = "lib" + libraryName + ".so." + BuildConfig.VERSION_CODE + "." + abi;
         File dynLibBaseDir = new File(ctx.getFilesDir(), "tmoe_dyn_lib");
