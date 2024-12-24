@@ -185,6 +185,9 @@ class SettingsFragment : BaseHierarchyFragment() {
             )
         }
         category("DebugAndLogsForClient", R.string.DebugAndLogsForClient) {
+            functionSwitch(
+                EnableDebugMode.INSTANCE, "EnableDebugMode", R.string.EnableDebugMode
+            )
             add(mBuildVarsLogSwitch)
             add(mTgnetNativeLogSwitch)
             functionSwitch(
