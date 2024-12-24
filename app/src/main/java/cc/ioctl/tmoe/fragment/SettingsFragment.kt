@@ -15,9 +15,6 @@ class SettingsFragment : BaseHierarchyFragment() {
     ) {
         category("BasicFunction", R.string.BasicFunction) {
             functionSwitch(
-                EnableDebugMode.INSTANCE, "EnableDebugMode", R.string.EnableDebugMode
-            )
-            functionSwitch(
                 FakePremium, "FakePremium", R.string.FakePremium
             )
             functionSwitch(
