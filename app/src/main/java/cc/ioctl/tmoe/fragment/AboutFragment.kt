@@ -39,11 +39,6 @@ class AboutFragment : BaseHierarchyFragment() {
                 openUrl("https://github.com/cinit/TMoe")
             }
         }
-        category("About", R.string.About) {
-            textValue("DiscussionGroup", R.string.DiscussionGroup, valueConstant = "@TMoe0") {
-                openDiscussionGroup()
-            }
-        }
         category("LicenseNotices", R.string.LicenseNotices) {
             notices.forEach { this@category.add(noticeToUiItem(it)) }
         }
