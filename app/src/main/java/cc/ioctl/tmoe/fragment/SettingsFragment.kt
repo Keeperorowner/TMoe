@@ -25,6 +25,10 @@ class SettingsFragment : BaseHierarchyFragment() {
                 BoostSpeed, "BoostSpeed", R.string.BoostSpeed
             )
             functionSwitch(
+                AlwaysShowDownloads, "AlwaysShowDownloads", R.string.AlwaysShowDownloads,
+                "AlwaysShowDownloadsD", R.string.AlwaysShowDownloadsD
+            )
+            functionSwitch(
                 AntiAntiForward, "AntiAntiForward", R.string.AntiAntiForward,
                 "RestrictContentMitigationDesc", R.string.RestrictContentMitigationDesc
             )
@@ -62,10 +66,6 @@ class SettingsFragment : BaseHierarchyFragment() {
                 descProvider = {
                     LocaleController.getString("AntiAntiCopyD", R.string.AntiAntiCopyD)
                 }
-            )
-            functionSwitch(
-                AlwaysShowDownloads, "AlwaysShowDownloads", R.string.AlwaysShowDownloads,
-                "AlwaysShowDownloadsD", R.string.AlwaysShowDownloadsD
             )
             functionSwitch(
                 ProhibitSpoilers, "ProhibitSpoilers", R.string.ProhibitSpoilers,

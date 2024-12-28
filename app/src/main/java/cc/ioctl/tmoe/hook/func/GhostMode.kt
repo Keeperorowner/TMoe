@@ -4,11 +4,23 @@ import cc.ioctl.tmoe.base.annotation.FunctionHookEntry
 import cc.ioctl.tmoe.hook.base.CommonDynamicHook
 import com.github.kyuubiran.ezxhelper.utils.*
 import de.robv.android.xposed.XposedHelpers
+import android.content.Context
+import java.util.Locale
 
 @FunctionHookEntry
 object GhostMode : CommonDynamicHook() {
+    private fun getLocalizedStatus(context: Context): String {
+        return when (Locale.getDefault().language) {
+            "zh" -> when (Locale.getDefault().country) {
+                "CN" -> "离线 ?"
+                "TW", "HK" -> "離線 ?"
+                else -> "离线 ?"
+            }
+            else -> "Offline ?"
+        }
+    }
     override fun initOnce(): Boolean = tryOrFalse {
-       findMethod(loadClass("org.telegram.messenger.MessagesController")) {
+        findMethod(loadClass("org.telegram.messenger.MessagesController")) {
             name == "completeReadTask"
         }.hookBefore {
             if (!isEnabled) return@hookBefore
@@ -49,6 +61,34 @@ object GhostMode : CommonDynamicHook() {
 
             if (updateStatusClass.isInstance(requestObject)) {
                 XposedHelpers.setBooleanField(requestObject, "offline", true)
+            }
+        }
+        findMethod(loadClass("org.telegram.ui.ProfileActivity")) {
+            name == "updateProfileData"
+        }.hookAfter { param ->
+            if (!isEnabled) return@hookAfter
+
+            val profileActivity = param.thisObject
+
+            val applicationLoaderClass = loadClass("org.telegram.messenger.ApplicationLoader")
+            val context = XposedHelpers.getStaticObjectField(applicationLoaderClass, "applicationContext") as Context
+            val baseFragmentClass = loadClass("org.telegram.ui.ActionBar.BaseFragment")
+            val getUserConfigMethod = baseFragmentClass.getDeclaredMethod("getUserConfig")
+            getUserConfigMethod.isAccessible = true
+            val userConfig = getUserConfigMethod.invoke(profileActivity)
+            val getClientUserIdMethod = userConfig.javaClass.getDeclaredMethod("getClientUserId")
+            getClientUserIdMethod.isAccessible = true
+            val currentUserId = getClientUserIdMethod.invoke(userConfig) as Long
+            val profileActivityClass = loadClass("org.telegram.ui.ProfileActivity")
+            val userIdField = profileActivityClass.getDeclaredField("userId")
+            userIdField.isAccessible = true
+            val profileUserId = userIdField.getLong(profileActivity)
+            if (currentUserId != 0L && profileUserId != 0L && currentUserId == profileUserId) {
+                val onlineTextView = XposedHelpers.getObjectField(profileActivity, "onlineTextView") as Array<*>
+                if (onlineTextView.size > 1 && onlineTextView[1] != null) {
+                    val localizedStatus = getLocalizedStatus(context)
+                    XposedHelpers.callMethod(onlineTextView[1], "setText", localizedStatus)
+                }
             }
         }
     }
