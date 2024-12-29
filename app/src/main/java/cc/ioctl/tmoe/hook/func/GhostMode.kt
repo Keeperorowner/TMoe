@@ -63,6 +63,7 @@ object GhostMode : CommonDynamicHook() {
                 XposedHelpers.setBooleanField(requestObject, "offline", true)
             }
         }
+
         findMethod(loadClass("org.telegram.ui.ProfileActivity")) {
             name == "updateProfileData"
         }.hookAfter { param ->
